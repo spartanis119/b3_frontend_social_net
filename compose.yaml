@@ -1,0 +1,15 @@
+version : "3"
+
+services:
+  express:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /opt/data 
+    command: ["tail", "-f", "/dev/null"]
+    image: react:2.0
+    container_name: react_container 
+    ports:
+      - "7000:7000"
+    volumes:
+      - ./:/opt/data
